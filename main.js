@@ -22,9 +22,10 @@ const t1 = new Task("Tvätta");
 const t2 = new Task("Dammsuga");
 const t3 = new Task("Diska");
 
-let todo = [t1, t2, t3];
-let taskDone = [];
+let todos = [t1, t2, t3];
+let tasksDone = [];
 
+//lägg till ny task i lista
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", addToList);
 
@@ -32,15 +33,16 @@ function addToList(e) {
   e.preventDefault();
   const userInput = document.getElementById("userInput").value;
   const newTask = new Task(userInput);
-  todo.push(newTask);
-  createHtml(todo);
+  todos.push(newTask);
+  createHtml(todos);
 }
 
-function createHtml(todo) {
+//skapa html för todo-lista
+function createHtml(todos) {
   const todoList = document.getElementById("todo");
   todoList.innerHTML = "";
 
-  for (let i = 0; i < todo.length; i++) {
+  for (let i = 0; i < todos.length; i++) {
     const listItem = document.createElement("div");
     listItem.className = "listItem";
     const checkBox = document.createElement("input");
@@ -48,7 +50,7 @@ function createHtml(todo) {
     const pTag = document.createElement("p");
     const removeButton = document.createElement("button");
 
-    pTag.innerHTML = todo[i].task;
+    pTag.innerHTML = todos[i].task;
     removeButton.innerHTML = "Remove";
 
     removeButton.addEventListener("click", () => {
@@ -66,11 +68,12 @@ function createHtml(todo) {
   }
 }
 
-function createHtmlDone(taskDone) {
+//skapa html för "done" lista
+function createHtmlDone(tasksDone) {
   const taskDoneList = document.getElementById("taskDone");
-  //   taskDoneList.innerHTML = "";
+  taskDoneList.innerHTML = "";
 
-  for (let i = 0; i < taskDone.length; i++) {
+  for (let i = 0; i < tasksDone.length; i++) {
     const listDoneItem = document.createElement("div");
     listDoneItem.className = "listItem";
     const checkBoxDone = document.createElement("input");
@@ -78,7 +81,7 @@ function createHtmlDone(taskDone) {
     const pTagDone = document.createElement("p");
     const removeButtonDone = document.createElement("button");
 
-    pTagDone.innerHTML = taskDone[i].task;
+    pTagDone.innerHTML = tasksDone[i].task;
     removeButtonDone.innerHTML = "Remove";
 
     listDoneItem.appendChild(checkBoxDone);
@@ -88,17 +91,19 @@ function createHtmlDone(taskDone) {
   }
 }
 
+//flytta till "done lista"
 function moveTask(i) {
-  todo.splice(i, 1);
-  createHtml(todo);
-  let done = new TaskDone(todo[i].task);
-  taskDone.push(done);
-  createHtmlDone(taskDone);
+  todos.splice(i, 1);
+  createHtml(todos);
+  let doneTask = new TaskDone(i.task);
+  tasksDone.push(doneTask);
+  createHtmlDone(tasksDone);
 }
 
+//ta bort från lista
 function deleteTask(i) {
-  todo.splice(i, 1);
-  createHtml(todo);
+  todos.splice(i, 1);
+  createHtml(todos);
 }
 
-createHtml(todo);
+createHtml(todos);
