@@ -39,6 +39,15 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: white;
+  margin: 10px;
+}
+
+#taskDone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 10px;
 }
 
 #tasks {
