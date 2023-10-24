@@ -79,6 +79,14 @@ p {
   margin: 0;
 }
 
+#checked {
+}
+
+#sort {
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid black;
