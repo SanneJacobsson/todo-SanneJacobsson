@@ -14,7 +14,7 @@ class TaskDone {
   taskDone;
 
   constructor(taskDone) {
-    this.taskdone = taskDone;
+    this.taskDone = taskDone;
   }
 }
 
@@ -53,12 +53,14 @@ function createHtml(todos) {
     pTag.innerHTML = todos[i].task;
     removeButton.innerHTML = "Remove";
 
+    const taskValue = todos[i];
+
     removeButton.addEventListener("click", () => {
       deleteTask(i);
     });
 
     checkBox.addEventListener("change", () => {
-      moveTask(i);
+      moveTask(taskValue);
     });
 
     listItem.appendChild(checkBox);
@@ -81,7 +83,7 @@ function createHtmlDone(tasksDone) {
     const pTagDone = document.createElement("p");
     const removeButtonDone = document.createElement("button");
 
-    pTagDone.innerHTML = tasksDone[i].task;
+    pTagDone.innerHTML = tasksDone[i].taskDone;
     removeButtonDone.innerHTML = "Remove";
 
     listDoneItem.appendChild(checkBoxDone);
@@ -93,11 +95,12 @@ function createHtmlDone(tasksDone) {
 
 //flytta till "done lista"
 function moveTask(i) {
-  todos.splice(i, 1);
-  createHtml(todos);
   let doneTask = new TaskDone(i.task);
   tasksDone.push(doneTask);
   createHtmlDone(tasksDone);
+  console.log(doneTask);
+  todos.splice(i, 1);
+  createHtml(todos);
 }
 
 //ta bort från lista
