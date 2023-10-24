@@ -86,6 +86,12 @@ function createHtmlDone(tasksDone) {
     pTagDone.innerHTML = tasksDone[i].taskDone;
     removeButtonDone.innerHTML = "Remove";
 
+    const taskValueDone = tasksDone[i];
+
+    checkBoxDone.addEventListener("change", () => {
+      moveTaskBack(taskValueDone);
+    });
+
     listDoneItem.appendChild(checkBoxDone);
     listDoneItem.appendChild(pTagDone);
     listDoneItem.appendChild(removeButtonDone);
@@ -101,6 +107,14 @@ function moveTask(i) {
   console.log(doneTask);
   todos.splice(i, 1);
   createHtml(todos);
+}
+//flytta tillbaka till "to do lista"
+function moveTaskBack(i) {
+  let reverseDoneTask = new Task(i.taskDone);
+  todos.push(reverseDoneTask);
+  createHtml(todos);
+  tasksDone.splice(i, 1);
+  createHtmlDone(tasksDone);
 }
 
 //ta bort från lista
