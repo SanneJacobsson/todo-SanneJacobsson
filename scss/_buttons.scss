@@ -1,0 +1,22 @@
+button {
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 3px;
+    font-family: inherit;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: black;
+  }
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  #sort {
+    padding: 3px;
+    margin-bottom: 5px;
+  }
