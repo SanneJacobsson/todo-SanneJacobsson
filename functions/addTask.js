@@ -1,6 +1,6 @@
-import { todos } from "../js/todoLists";
 import { Task } from "../models/Task";
 import { createHtml } from "./createHtml";
+import { listFromLS } from "./localStorage";
 
 export function addToList(e) {
   e.preventDefault();
@@ -11,8 +11,8 @@ export function addToList(e) {
     return;
   }
 
-  todos.push(newTask);
-  createHtml(todos);
+  listFromLS.push(newTask);
+  createHtml(listFromLS);
 
   document.getElementById("userInput").value = "";
 }

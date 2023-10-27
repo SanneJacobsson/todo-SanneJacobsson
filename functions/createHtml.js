@@ -1,3 +1,4 @@
+import { saveTodoLS } from "./localStorage";
 import { deleteDoneTask, deleteTask } from "./deleteTasks";
 import {
   moveTask,
@@ -7,6 +8,7 @@ import {
 } from "./moveTasks";
 
 export function createHtml(todos) {
+  saveTodoLS(todos);
   const todoList = document.getElementById("todo");
   todoList.innerHTML = "";
 
@@ -38,7 +40,6 @@ export function createHtml(todos) {
     listItem.appendChild(removeButton);
     todoList.appendChild(listItem);
   }
-  // saveTodoLS(todos);
 }
 export function createHtmlDone(tasksDone) {
   const taskDoneList = document.getElementById("taskDone");
