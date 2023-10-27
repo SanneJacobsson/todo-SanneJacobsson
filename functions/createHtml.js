@@ -15,11 +15,12 @@ export function createHtml(todos) {
     listItem.className = "listItem";
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute("class", "checkbox");
     const pTag = document.createElement("p");
     const removeButton = document.createElement("button");
 
     pTag.innerHTML = todos[i].task;
-    removeButton.innerHTML = "Remove";
+    removeButton.innerHTML = "Delete";
 
     const taskValue = todos[i];
 
@@ -37,8 +38,7 @@ export function createHtml(todos) {
     listItem.appendChild(removeButton);
     todoList.appendChild(listItem);
   }
-
-  //   saveTodoLS();
+  // saveTodoLS(todos);
 }
 export function createHtmlDone(tasksDone) {
   const taskDoneList = document.getElementById("taskDone");
@@ -49,11 +49,12 @@ export function createHtmlDone(tasksDone) {
     listDoneItem.className = "listItem";
     const checkBoxDone = document.createElement("input");
     checkBoxDone.setAttribute("type", "checkbox");
+    checkBoxDone.setAttribute("class", "checkbox");
     const pTagDone = document.createElement("p");
     const removeButtonDone = document.createElement("button");
 
     pTagDone.innerHTML = tasksDone[i].taskDone;
-    removeButtonDone.innerHTML = "Remove";
+    removeButtonDone.innerHTML = "Delete";
 
     const taskValueDone = tasksDone[i];
 
@@ -70,5 +71,9 @@ export function createHtmlDone(tasksDone) {
     listDoneItem.appendChild(pTagDone);
     listDoneItem.appendChild(removeButtonDone);
     taskDoneList.appendChild(listDoneItem);
+
+    if (tasksDone[i].isChecked === true) {
+      checkBoxDone.checked = true;
+    }
   }
 }

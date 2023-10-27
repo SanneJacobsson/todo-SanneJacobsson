@@ -5,7 +5,7 @@ import { createHtml } from "./createHtml";
 export function addToList(e) {
   e.preventDefault();
   const userInput = document.getElementById("userInput").value;
-  const newTask = new Task(userInput);
+  const newTask = new Task(userInput, false);
 
   if (userInput === "") {
     return;

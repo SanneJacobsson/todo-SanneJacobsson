@@ -8,18 +8,22 @@
   </head>
   <body>
     <div id="app">
-      <h2>To Do List</h2>
-      <form id="addTask">
-        <input type="text" id="userInput" />
-        <button type="submit" id="submit">Add task</button>
-      </form>
-      <section>
-        <h3>To Do</h3>
-        <button id="sort">Sort alphabetically</button>
-      </section>
-      <section id="todo"></section>
-      <h3>Done</h3>
-      <section id="taskDone"></section>
+      <header id="header">
+        <h2>To Do List</h2>
+        <form id="addTask">
+          <input type="text" id="userInput" />
+          <button type="submit" id="submit">Add Task</button>
+        </form>
+      </header>
+      <main id="main">
+        <section>
+          <h3>To Do</h3>
+          <button id="sort">Sort alphabetically</button>
+        </section>
+        <section id="todo"></section>
+        <h3>Done</h3>
+        <section id="taskDone"></section>
+      </main>
     </div>
     <script type="module" src="js/main.js"></script>
   </body>

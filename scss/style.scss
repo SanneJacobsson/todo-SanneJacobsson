@@ -1,9 +1,11 @@
 @use "reset";
 @use "buttons";
-@use "list";
+@use "header";
+@use "mainpage";
 
 h3 {
   margin-bottom: 5px;
+  color: rgb(8, 8, 62);
 }
 
 #addTask {

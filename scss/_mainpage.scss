@@ -1,0 +1,54 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 1rem;
+    background-color: rgb(214, 230, 255);
+    gap: 10px;
+}
+
+#todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(214, 230, 255);
+    gap: 5px;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 99%;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+  
+p {
+    margin: 0;
+}
+
+#taskDone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(214, 230, 255);
+    gap: 5px;
+}
+
+#taskDone .listItem {
+    background-color: rgb(159, 171, 190);
+}
+
+#taskDone .listItem p {
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.checkbox {
+    cursor: pointer;
+}

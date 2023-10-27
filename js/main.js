@@ -24,13 +24,12 @@ sortButton.addEventListener("click", () => {
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", addToList);
 
-// function saveTodoLS() {
-//   localStorage.setItem("todos", JSON.stringify(todos));
-// }
-
-// function getTodoLS() {
+// function getTodoLS(taskFromUser) {
 //   const taskFromUser = JSON.parse(localStorage.getItem("todos") || "[]");
 // }
-
-createHtml(todos);
 // getTodoLS(taskFromUser);
+
+// function saveTodoLS(todos) {
+//   localStorage.setItem("todos", JSON.stringify(todos));
+// }
+createHtml(todos);

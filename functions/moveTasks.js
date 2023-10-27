@@ -5,7 +5,7 @@ import { createHtml, createHtmlDone } from "./createHtml";
 
 //flytta till "done"
 export function moveTask(i) {
-  let doneTask = new TaskDone(i.task);
+  let doneTask = new TaskDone(i.task, true);
   tasksDone.push(doneTask);
   createHtmlDone(tasksDone);
   console.log(doneTask);
@@ -18,7 +18,7 @@ export function moveTaskSplice(i) {
 }
 //flytta tillbaka till "to do"
 export function moveTaskBack(i) {
-  let reverseDoneTask = new Task(i.taskDone);
+  let reverseDoneTask = new Task(i.taskDone, false);
   todos.push(reverseDoneTask);
   createHtml(todos);
 }

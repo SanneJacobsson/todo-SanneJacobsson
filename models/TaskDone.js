@@ -2,8 +2,8 @@ export class TaskDone {
   taskDone;
   isChecked;
 
-  constructor(taskDone) {
+  constructor(taskDone, isChecked) {
     this.taskDone = taskDone;
-    this.isChecked = true;
+    this.isChecked = isChecked;
   }
 }
